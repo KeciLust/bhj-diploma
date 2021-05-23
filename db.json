@@ -5,6 +5,24 @@
       "email": "demo@demo",
       "password": "demo",
       "id": "1"
+    },
+    {
+      "name": "Денис",
+      "email": "oleg@demo.ru",
+      "password": "123",
+      "id": "9r1kd64rgkp1561ta"
+    },
+    {
+      "name": "Денис",
+      "email": "dinya_nikitin@mail.ru",
+      "password": "123",
+      "id": "9r1kd6eq4kp16hw5v"
+    },
+    {
+      "name": "Денис",
+      "email": "irina_web@bk.ru",
+      "password": "123",
+      "id": "9r1kd6144kp16jrv6"
     }
   ],
   "accounts": [
@@ -22,6 +40,11 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
+    },
+    {
+      "name": "Денис",
+      "user_id": "9r1kd6144kp16jrv6",
+      "id": "9r1kd6jcwkp1jkjh5"
     }
   ],
   "transactions": [

@@ -42,7 +42,7 @@ __асинхронно__, то есть без перезагрузки стра
 
 ### registerEvents
 
-Прикрпеляет к форме следующий обработчик:
+Прикрепляет к форме следующий обработчик:
 
 Запрещает странице перезагружаться при попытке __успешной__ отправки.
 
@@ -112,7 +112,7 @@ console.log( asyncForm.getData());
 ```javascript
 class MyForm extends AsyncForm {
   onSubmit( data ) {
-    console.log( data ); // выведет данные, которые передаст onsubmit
+    console.log( data ); // выведет данные, которые передаст onSubmit
   }
 }
 

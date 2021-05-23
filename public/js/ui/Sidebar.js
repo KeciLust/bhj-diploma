@@ -1,3 +1,5 @@
+
+
 /**
  * Класс Sidebar отвечает за работу боковой колонки:
  * кнопки скрытия/показа колонки в мобильной версии сайта
@@ -18,17 +20,40 @@ class Sidebar {
    * при нажатии на кнопку .sidebar-toggle
    * */
   static initToggleButton() {
+    const bt = document.querySelector(`.sidebar-toggle`);
+    bt.addEventListener(`click`, () => {
+      App.element.classList.toggle(`sidebar-open`);
+      App.element.classList.toggle(`sidebar-collapse`);
 
+    })
   }
 
   /**
    * При нажатии на кнопку входа, показывает окно входа
    * (через найденное в App.getModal)
-   * При нажатии на кнопку регастрации показывает окно регистрации
+   * При нажатии на кнопку регистрации показывает окно регистрации
    * При нажатии на кнопку выхода вызывает User.logout и по успешному
    * выходу устанавливает App.setState( 'init' )
    * */
   static initAuthLinks() {
+
+    const login = document.querySelector(`.menu-item_login`),
+      register = document.querySelector(`.menu-item_register`),
+      logout = document.querySelector(`.menu-item_logout`);
+    login.addEventListener(`click`, () => {
+      App.getModal(`login`).open();
+    });
+    register.addEventListener(`click`, () => {
+      App.getModal(`register`).open();
+    });
+    logout.addEventListener(`click`, (e) => {
+      e.preventDefault();
+      User.logout(User.current(), (err, response) => {
+        if (response && response.success) {
+          App.setState(`init`);
+        }
+      });
+    })
 
   }
 }

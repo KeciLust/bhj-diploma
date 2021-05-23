@@ -4,7 +4,7 @@
 class App {
   /**
    * С вызова этого метода начинается работа всего приложения
-   * Он производит перваоначальную настройку всех
+   * Он производит первоначальную настройку всех
    * страниц, форм, виджетов, всплывающих окон, а также
    * боковой колонки
    * */
@@ -12,14 +12,14 @@ class App {
     this.element = document.querySelector(".app");
     this.content = document.querySelector(".content-wrapper");
 
-    this.initPages();
+     this.initPages();
     this.initForms();
     this.initModals();
-    this.initWidgets();
+     this.initWidgets();
 
     Sidebar.init();
 
-    this.initUser();
+     this.initUser();
   }
 
   /**
@@ -113,7 +113,7 @@ class App {
    * Возвращает виджет по названию
    * Обращается к объекту App.widgets и извлекает
    * из него свойство widgetName:
-   * App.getWidget( 'transactions' ); // извелекает App.widgets.transactions
+   * App.getWidget( 'transactions' ); // извлекает App.widgets.transactions
    * */
   static getWidget(widgetName) {
     return this.widgets[widgetName];
@@ -123,7 +123,7 @@ class App {
    * Возвращает форму по названию
    * Обращается к объекту App.forms и извлекает
    * из него свойство formName:
-   * App.getWidget( 'transactions' ); // извелекает App.forms.transactions
+   * App.getWidget( 'transactions' ); // извлекает App.forms.transactions
    * */
   static getForm(formName) {
     return this.forms[formName];
@@ -195,7 +195,7 @@ class App {
   }
 
   /**
-   * Вызвает метод update() у виджетов
+   * Вызывает метод update() у виджетов
    * accounts и user
    * */
   static updateWidgets() {
