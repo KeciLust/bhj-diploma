@@ -16,11 +16,9 @@ class Entity {
       method: `GET`,
       data,
       callback: (err, response) => {
-        callback(err, response);
+        callback;
       }
-
     });
-
   }
 
   /**
@@ -35,11 +33,9 @@ class Entity {
       method: `PUT`,
       data,
       callback: (err, response) => {
-        callback(err, response);
+        callback;
       }
-
-    });
-
+    })
   }
 
   /**
@@ -53,9 +49,8 @@ class Entity {
       method: `DELETE`,
       data,
       callback: (err, response) => {
-        callback(err, response);
+        callback;
       }
-    });
-
+    })
   }
 }

@@ -4,37 +4,40 @@
  * */
 const createRequest = (options = {}) => {
 
-    const xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest(),
+        arr = [],
+        formData = new FormData();
+    let url;
     if (options.method === `GET`) {
-        const arr = [];
-         if(options.data){
-            
-            for(let i of Object.entries(options.data)){
+        if (options.data) {
+            for (let i of Object.entries(options.data)) {
                 const key = i[0],
-                value = i[1];
+                    value = i[1];
+
                 arr.push(`${key}=${value}`);
             }
-         }
-        console.log( options.data);
-        xhr.open(`GET`, options.url)
-        xhr.responseType = options.responseType;
-        xhr.withCredentials = true;
-        xhr.send();
-    } else {
-        xhr.open(options.method, options.url);
-        xhr.responseType = options.responseType;
-        const formData = new FormData();
-        
-        for (let i of Object.entries(options.data)){
-            const key = i[0],
-            value = i[1];
-            formData.append(`${key}`, `${value}`);
-
 
         }
+        url = options.data ? `${options.url}?${arr.join(`&`)}` : `${options.url}`;
+    } else {
+        for (let i of Object.entries(options.data)) {
+            const key = i[0],
+                value = i[1];
+            formData.append(`${key}`, `${value}`);
+        }
+        url = `${options.url}`;
+    }
+
+
+    
+    xhr.responseType = options.responseType;
+    try {
+        xhr.open(options.method, url);
         xhr.send(formData);
+    } catch (e) {
+        return  new Error(`Что то пошло не так`, e);
 
     }
-    xhr.onload = () => options.callback(xhr.err, xhr.response);
-
-};
+    xhr.onload = () => options.callback(xhr.error, xhr.response);
+   
+}
