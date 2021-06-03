@@ -20,8 +20,8 @@ class AccountsWidget {
       throw new Error(`Элемент не существует`);
     }
     this.element = element;
-    this.registerEvents();
-    this.update();
+        this.update();
+        this.registerEvents();
 
   }
 
@@ -33,17 +33,13 @@ class AccountsWidget {
    * вызывает AccountsWidget.onSelectAccount()
    * */
   registerEvents() {
-    document.querySelector(`.create-account`).addEventListener(`click`, (e) => {
+  this.element.addEventListener(`click`, (e) => {
+    if(e.target.classList.contains(`create-account`)){
       App.getModal(`createAccount`).open();
-      e.preventDefault();
-    });
-    const acc = Array.from(document.querySelectorAll(`.account`));
-    acc.forEach(el => {
-      el.addEventListener(`click`, (e) => {
-        this.onSelectAccount(el);
-        e.preventDefault();
-      });
-    });
+    }else if(e.target.closest(`li`).classList.contains(`account`)){
+      this.onSelectAccount(e.target.closest(`li`));
+    }
+  })
   }
 
   /**
@@ -58,9 +54,10 @@ class AccountsWidget {
    * */
   update() {
     if (User.current()) {
+      
       Account.list(User.current(), (err, response) => {
-        if (response && response.success) {
-
+        if (response) {
+          
           this.clear();
           this.renderItem(response.data);
         }
@@ -98,15 +95,15 @@ class AccountsWidget {
    * item - объект с данными о счёте
    * */
   getAccountHTML(item) {
-    let el = document.createElement(`li`);
-    el.classList.add(`account`);
-    el.dataset.id = `${item.id}`;
-    el.insertAdjacentHTML("afterbegin", `<a href='#'>
+    const li = document.createElement(`li`);
+    li.classList.add(`account`);
+    li.dataset.id = `${item.id}`;
+    li.insertAdjacentHTML("afterbegin", `<a href='#'>
      <span>${item.name}</span> /
      <span>${item.sum} ₽</span>
  </a>`);
-    console.log(item.id);
-    return el;
+  
+    return li;
   }
 
   /**
@@ -117,7 +114,8 @@ class AccountsWidget {
    * */
   renderItem(data) {
     data.forEach(el => {
-      this.element.insertAdjacentHTML(`beforeEnd`, this.getAccountHTML(el));
+      const item = this.getAccountHTML(el);
+      this.element.insertAdjacentElement("beforeEnd", item);
     });
 
   }

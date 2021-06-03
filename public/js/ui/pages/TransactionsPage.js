@@ -1,5 +1,3 @@
-
-
 /**
  * Класс TransactionsPage управляет
  * страницей отображения доходов и
@@ -18,14 +16,14 @@ class TransactionsPage {
     }
     this.element = element;
     this.registerEvents();
-
+    this.lastOptions;
   }
 
   /**
    * Вызывает метод render для отрисовки страницы
    * */
   update() {
-this.render();
+    this.render();
   }
 
   /**
@@ -56,18 +54,34 @@ this.render();
    * для обновления приложения
    * */
   removeAccount() {
-    if (confirm(`Вы хотите удалить счёт?`)) {
-      Account.remove();
+    if (!this.lastOptions) {
+      return;
+    }
+    if (confirm(`Вы действительно хотите удалить счёт?`)) {
+
+
+      Account.remove(this.lastOptions, (err, response) => {
+        if (response.success) {
+          App.updateWidgets();
+        }
+      });
     }
   }
 
   /**
    * Удаляет транзакцию (доход или расход). Требует
-   * полтверждеия действия (с помощью confirm()).
+   * подтверждения действия (с помощью confirm()).
    * По удалению транзакции вызовите метод App.update(),
    * либо обновляйте текущую страницу (метод update) и виджет со счетами
    * */
   removeTransaction(id) {
+    if (confirm(`Вы действительно хотите удалить эту транзакцию?`)) {
+      Transaction.remove(id, (err, response) => {
+        if (response.success) {
+          App.update();
+        }
+      })
+    }
 
   }
 
@@ -78,18 +92,20 @@ this.render();
    * в TransactionsPage.renderTransactions()
    * */
   render(options) {
-    if(!options){
+    if (!options) {
       return;
     }
-    const lastOptions = options;
-    Account.get(options, () => {
-      if(response){
-        this.renderTitle(response.data.name);
+    this.lastOptions = options;
+    Account.get(options.account_id, (err, response) => {
+
+      if (response) {
+
+        this.renderTitle(response);
       }
     });
-    Transaction.list(User.current(), () => {
-      if(response){
-        this.renderTransactions(response.data.account_id);
+    Transaction.list(options, (err, response) => {
+      if (response) {
+        this.renderTransactions(response);
       }
     })
 
@@ -108,6 +124,7 @@ this.render();
    * Устанавливает заголовок в элемент .content-title
    * */
   renderTitle(name) {
+    document.querySelector(`.content-title`).textContent = `${name.data.name}`;
 
   }
 

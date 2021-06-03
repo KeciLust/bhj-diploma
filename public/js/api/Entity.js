@@ -15,9 +15,7 @@ class Entity {
       responseType: `json`,
       method: `GET`,
       data,
-      callback: (err, response) => {
-        callback;
-      }
+      callback
     });
   }
 
@@ -32,10 +30,8 @@ class Entity {
       responseType: `json`,
       method: `PUT`,
       data,
-      callback: (err, response) => {
-        callback;
-      }
-    })
+      callback
+    });
   }
 
   /**
@@ -48,9 +44,7 @@ class Entity {
       responseType: `json`,
       method: `DELETE`,
       data,
-      callback: (err, response) => {
-        callback;
-      }
-    })
+      callback
+    });
   }
 }

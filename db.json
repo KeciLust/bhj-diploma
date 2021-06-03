@@ -77,6 +77,11 @@
       "name": "Д",
       "user_id": "9r1kd6ddwkp9xxqb2",
       "id": "9r1kd6dvwkpaykfy3"
+    },
+    {
+      "name": "12345",
+      "user_id": "9r1kd6ddwkp9xxqb2",
+      "id": "9r1kd68zkkpeai2e2"
     }
   ],
   "transactions": [
@@ -214,6 +219,60 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
+    },
+    {
+      "id": "9r1kd6ewgkpbdkdlm",
+      "type": "income",
+      "name": "1",
+      "sum": 123,
+      "account_id": "9r1kd6h3gkpatmrw5",
+      "user_id": "9r1kd6ddwkp9xxqb2",
+      "created_at": "2021-05-30T16:05:54.009Z"
+    },
+    {
+      "id": "9r1kd6cmckpbdktz0",
+      "type": "expense",
+      "name": "Денис",
+      "sum": 1234,
+      "account_id": "9r1kd6h3gkpatmrw5",
+      "user_id": "9r1kd6ddwkp9xxqb2",
+      "created_at": "2021-05-30T16:06:15.227Z"
+    },
+    {
+      "id": "9r1kd6fxskpbf1s8r",
+      "type": "income",
+      "name": "Денис",
+      "sum": 1234,
+      "account_id": "9r1kd6h3gkpatmrw5",
+      "user_id": "9r1kd6ddwkp9xxqb2",
+      "created_at": "2021-05-30T16:47:25.754Z"
+    },
+    {
+      "id": "9r1kd69pokpbj26oz",
+      "type": "income",
+      "name": "Денис",
+      "sum": 1,
+      "account_id": "9r1kd6h3gkpatmrw5",
+      "user_id": "9r1kd6ddwkp9xxqb2",
+      "created_at": "2021-05-30T18:39:42.946Z"
+    },
+    {
+      "id": "9r1kd62u8kpcwp5tc",
+      "type": "income",
+      "name": "ccsd",
+      "sum": 300,
+      "account_id": "9r1kd6h3gkpatmrw5",
+      "user_id": "9r1kd6ddwkp9xxqb2",
+      "created_at": "2021-05-31T17:49:16.079Z"
+    },
+    {
+      "id": "9r1kd6c3gkpeaiida",
+      "type": "income",
+      "name": "Keci",
+      "sum": 1000,
+      "account_id": "9r1kd68zkkpeai2e2",
+      "user_id": "9r1kd6ddwkp9xxqb2",
+      "created_at": "2021-06-01T17:03:46.557Z"
     }
   ]
 }

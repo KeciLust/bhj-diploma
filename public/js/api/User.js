@@ -43,7 +43,7 @@ class User {
       method: `GET`,
       responseType: `json`,
       callback: (err, response) => {
-       
+      
         if (response && response.success) {
           this.setCurrent(response.user);
         } else {
