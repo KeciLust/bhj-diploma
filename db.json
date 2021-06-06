@@ -64,19 +64,9 @@
       "id": "9r1kd61jskp9x7sbw"
     },
     {
-      "name": "1",
+      "name": "Ден",
       "user_id": "9r1kd6ddwkp9xxqb2",
-      "id": "9r1kd66oskpkur335"
-    },
-    {
-      "name": "12",
-      "user_id": "9r1kd6ddwkp9xxqb2",
-      "id": "9r1kd6184kpkur60t"
-    },
-    {
-      "name": "123",
-      "user_id": "9r1kd6ddwkp9xxqb2",
-      "id": "9r1kd6ahokpkur90n"
+      "id": "9r1kd6asgkpl0j8de"
     }
   ],
   "transactions": [
@@ -241,15 +231,6 @@
       "account_id": "9r1kd61o8kpiircbk",
       "user_id": "9r1kd6ddwkp9xxqb2",
       "created_at": "2021-06-04T16:33:33.269Z"
-    },
-    {
-      "id": "9r1kd633wkpkv13dk",
-      "type": "income",
-      "name": "Keci",
-      "sum": 1234,
-      "account_id": "9r1kd66oskpkur335",
-      "user_id": "9r1kd6ddwkp9xxqb2",
-      "created_at": "2021-06-06T07:24:42.967Z"
     }
   ]
 }

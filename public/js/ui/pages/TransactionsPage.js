@@ -36,11 +36,11 @@ class TransactionsPage {
   registerEvents() {
 
     this.element.addEventListener(`click`, (e) => {
-      if (e.target.classList.contains(`remove-account`) || e.target.classList.contains(`fa-ar`)) {
+      if (e.target.closest(`.remove-account`)) {
         this.removeAccount();
 
-      } else if (e.target.classList.contains(`transaction__remove`) || e.target.classList.contains(`fa-tr`)) {
-        
+      } else if (e.target.closest(`.transaction__remove`)) {
+
         this.removeTransaction({
           id: e.target.dataset.id
         });
@@ -109,7 +109,7 @@ class TransactionsPage {
     });
     Transaction.list(options, (err, response) => {
       if (response && response.data) {
-        this.renderTransactions(response);
+        this.renderTransactions(response.data);
       }
     })
 
@@ -121,6 +121,7 @@ class TransactionsPage {
    * Устанавливает заголовок: «Название счёта»
    * */
   clear() {
+    
     this.renderTransactions([]);
     document.querySelector(`.content-title`).textContent = `Название счёта`;
     this.lastOptions = {};
@@ -189,8 +190,9 @@ class TransactionsPage {
    * */
   renderTransactions(data) {
     document.querySelectorAll(`.transaction`).forEach(el => el.remove());
-    data.data.forEach(el => {
+    data.forEach(el => {
       document.querySelector(`.content`).insertAdjacentElement(`beforeend`, this.getTransactionHTML(el));
     });
+
   }
 }
