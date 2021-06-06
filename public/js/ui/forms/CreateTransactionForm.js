@@ -20,7 +20,7 @@ class CreateTransactionForm extends AsyncForm {
     if (User.current()) {
       Account.list(User.current(), (err, response) => {
         const data = response.data;
-
+           Array.from(this.element.querySelectorAll(`option`)).forEach(el => el.remove());
         data.forEach(el => {
           this.element.querySelector(`.accounts-select`).insertAdjacentHTML(`beforeEnd`, `<option value="${el.id}">${el.name}</option>`);
         });

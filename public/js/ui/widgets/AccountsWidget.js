@@ -20,8 +20,8 @@ class AccountsWidget {
       throw new Error(`Элемент не существует`);
     }
     this.element = element;
-        this.update();
-        this.registerEvents();
+    this.update();
+    this.registerEvents();
 
   }
 
@@ -33,13 +33,13 @@ class AccountsWidget {
    * вызывает AccountsWidget.onSelectAccount()
    * */
   registerEvents() {
-  this.element.addEventListener(`click`, (e) => {
-    if(e.target.classList.contains(`create-account`)){
-      App.getModal(`createAccount`).open();
-    }else if(e.target.closest(`li`).classList.contains(`account`)){
-      this.onSelectAccount(e.target.closest(`li`));
-    }
-  })
+    this.element.addEventListener(`click`, (e) => {
+      if (e.target.classList.contains(`create-account`)) {
+        App.getModal(`createAccount`).open();
+      } else if (e.target.closest(`li`).classList.contains(`account`)) {
+        this.onSelectAccount(e.target.closest(`li`));
+      }
+    })
   }
 
   /**
@@ -54,10 +54,9 @@ class AccountsWidget {
    * */
   update() {
     if (User.current()) {
-      
+
       Account.list(User.current(), (err, response) => {
-        if (response) {
-          
+        if (response && response.success) {
           this.clear();
           this.renderItem(response.data);
         }
@@ -102,7 +101,7 @@ class AccountsWidget {
      <span>${item.name}</span> /
      <span>${item.sum} ₽</span>
  </a>`);
-  
+
     return li;
   }
 

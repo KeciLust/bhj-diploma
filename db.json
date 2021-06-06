@@ -64,24 +64,19 @@
       "id": "9r1kd61jskp9x7sbw"
     },
     {
-      "name": "123",
-      "user_id": "9r1kd6ddwkp9xxqb2",
-      "id": "9r1kd6h3gkpatmrw5"
-    },
-    {
       "name": "1",
       "user_id": "9r1kd6ddwkp9xxqb2",
-      "id": "9r1kd6ejgkpatrdb2"
+      "id": "9r1kd66oskpkur335"
     },
     {
-      "name": "Д",
+      "name": "12",
       "user_id": "9r1kd6ddwkp9xxqb2",
-      "id": "9r1kd6dvwkpaykfy3"
+      "id": "9r1kd6184kpkur60t"
     },
     {
-      "name": "12345",
+      "name": "123",
       "user_id": "9r1kd6ddwkp9xxqb2",
-      "id": "9r1kd68zkkpeai2e2"
+      "id": "9r1kd6ahokpkur90n"
     }
   ],
   "transactions": [
@@ -221,58 +216,40 @@
       "user_id": "1"
     },
     {
-      "id": "9r1kd6ewgkpbdkdlm",
-      "type": "income",
-      "name": "1",
-      "sum": 123,
-      "account_id": "9r1kd6h3gkpatmrw5",
-      "user_id": "9r1kd6ddwkp9xxqb2",
-      "created_at": "2021-05-30T16:05:54.009Z"
-    },
-    {
-      "id": "9r1kd6cmckpbdktz0",
-      "type": "expense",
-      "name": "Денис",
-      "sum": 1234,
-      "account_id": "9r1kd6h3gkpatmrw5",
-      "user_id": "9r1kd6ddwkp9xxqb2",
-      "created_at": "2021-05-30T16:06:15.227Z"
-    },
-    {
-      "id": "9r1kd6fxskpbf1s8r",
+      "id": "9r1kd66mckpijq414",
       "type": "income",
       "name": "Денис",
-      "sum": 1234,
-      "account_id": "9r1kd6h3gkpatmrw5",
+      "sum": 1000,
+      "account_id": "9r1kd61o8kpiircbk",
       "user_id": "9r1kd6ddwkp9xxqb2",
-      "created_at": "2021-05-30T16:47:25.754Z"
+      "created_at": "2021-06-04T16:32:42.471Z"
     },
     {
-      "id": "9r1kd69pokpbj26oz",
+      "id": "9r1kd617kkpijqdtl",
       "type": "income",
       "name": "Денис",
-      "sum": 1,
-      "account_id": "9r1kd6h3gkpatmrw5",
+      "sum": 1000,
+      "account_id": "9r1kd61o8kpiircbk",
       "user_id": "9r1kd6ddwkp9xxqb2",
-      "created_at": "2021-05-30T18:39:42.946Z"
+      "created_at": "2021-06-04T16:32:55.160Z"
     },
     {
-      "id": "9r1kd62u8kpcwp5tc",
+      "id": "9r1kd6mokpijr786",
       "type": "income",
-      "name": "ccsd",
-      "sum": 300,
-      "account_id": "9r1kd6h3gkpatmrw5",
+      "name": "123",
+      "sum": 1000,
+      "account_id": "9r1kd61o8kpiircbk",
       "user_id": "9r1kd6ddwkp9xxqb2",
-      "created_at": "2021-05-31T17:49:16.079Z"
+      "created_at": "2021-06-04T16:33:33.269Z"
     },
     {
-      "id": "9r1kd6c3gkpeaiida",
+      "id": "9r1kd633wkpkv13dk",
       "type": "income",
       "name": "Keci",
-      "sum": 1000,
-      "account_id": "9r1kd68zkkpeai2e2",
+      "sum": 1234,
+      "account_id": "9r1kd66oskpkur335",
       "user_id": "9r1kd6ddwkp9xxqb2",
-      "created_at": "2021-06-01T17:03:46.557Z"
+      "created_at": "2021-06-06T07:24:42.967Z"
     }
   ]
 }
