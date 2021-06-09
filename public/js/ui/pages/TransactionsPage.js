@@ -42,7 +42,7 @@ class TransactionsPage {
       } else if (e.target.closest(`.transaction__remove`)) {
 
         this.removeTransaction({
-          id: e.target.dataset.id
+          id: e.target.closest(`.transaction__remove`).dataset.id
         });
       }
 
